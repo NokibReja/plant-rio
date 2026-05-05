@@ -5,6 +5,18 @@ const router = createBrowserRouter([
     {
         path: '/',
         Component: HomeLayouts,
+    },
+    {
+        path: '/plants',
+        element: <p>planst</p>
+    },
+    {
+        path: '/profile',
+        element: <p>profile</p>
+    },
+    {
+        path: '/*',
+        element: <p>eror</p>
     }
 ])
 

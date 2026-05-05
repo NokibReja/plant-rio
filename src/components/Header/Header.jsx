@@ -1,21 +1,23 @@
 import React from 'react';
+import bannerImg from '../../assets/river-img.jpg'
 
 const Header = () => {
     return (
-        <div>
-            <div className="hero bg-base-200 ">
+        <div className='lg:w-11/12 mx-auto bg-green-50'>
+            <div className="">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                        className="max-w-sm rounded-lg shadow-2xl"
-                    />
                     <div>
-                        <h1 className="text-5xl font-bold">Box Office News!</h1>
-                        <p className="py-6">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        <img
+                            src={bannerImg}
+                            className="lg:max-w-m rounded-lg shadow-2xl"
+                        />
+                    </div>
+                    <div>
+                        <h1 className="lg:text-5xl text-2xl font-bold">Plants Make better life</h1>
+                        <p className="py-6 lg:text-xl font-semibold">
+                            Plant trees today to protect our planet, ensure cleaner air, and sustain future generations
                         </p>
-                        <button className="btn btn-primary">Get Started</button>
+                        <button className="btn bg-green-600 text-white">Explore More</button>
                     </div>
                 </div>
             </div>

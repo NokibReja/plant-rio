@@ -1,0 +1,11 @@
+@reference "../index.css";
+
+nav a {
+  @apply m-2 text-green-600;
+}
+a:hover{
+    @apply bg-green-200 rounded;
+}
+nav a.active{
+    @apply  underline;
+}

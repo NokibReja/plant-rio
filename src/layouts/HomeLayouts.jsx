@@ -4,21 +4,16 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import PlantCare from '../components/PlantCare/PlantCare';
 import GreenExperts from '../components/GreenExperts/GreenExperts';
+import { Outlet } from 'react-router';
 
 const HomeLayouts = () => {
     return (
         <div>
             <header>
                 <Navbar></Navbar>
-                <Header></Header>
             </header>
             <main>
-                <div>
-                    <PlantCare></PlantCare>
-                </div>
-                <div>
-                    <GreenExperts></GreenExperts>
-                </div>
+                <Outlet></Outlet>
             </main>
             <footer>
                 <Footer></Footer>

@@ -1,0 +1,98 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://images.squarespace-cdn.com/content/v1/54fbb611e4b0d7c1e151d22a/1610074066643-OP8HDJUWUH8T5MHN879K/Snake+Plant.jpg?format=1000w",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Peace Lily",
+    "category": "Flowering",
+    "price": 22,
+    "rating": 4.7,
+    "availableStock": 8,
+    "careLevel": "Medium",
+    "description": "A beautiful flowering plant that improves air quality and adds elegance.",
+    "image": "https://www.mydomaine.com/thmb/N3StDx3PyGbF0Pwafv-P9-qiNZU=/900x0/filters:no_upscale():strip_icc()/1566417254329_20190821-1566417255317-b9314f1d9f7a4668a466c5ffb1913a8f.jpg",
+    "providerName": "GreenLeaf Nursery"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Aloe Vera",
+    "category": "Medicinal",
+    "price": 15,
+    "rating": 4.6,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "A medicinal plant known for its soothing gel and low maintenance care.",
+    "image": "https://aloevera-centar.com/wp-content/uploads/2023/10/aloe-vera-u-stanu.webp",
+    "providerName": "NatureCare Hub"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Spider Plant",
+    "category": "Decorative",
+    "price": 16,
+    "rating": 4.5,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A fast-growing plant that looks great in hanging pots and purifies air.",
+    "image": "https://www.beardsanddaisies.co.uk/cdn/shop/files/Spider_Plant_12cm.jpg?v=1768907696&width=1200",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 5,
+    "plantName": "Areca Palm",
+    "category": "Decorative",
+    "price": 30,
+    "rating": 4.7,
+    "availableStock": 6,
+    "careLevel": "Medium",
+    "description": "A popular indoor palm that adds a tropical feel to your home.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjeyaZI3E5YoYg7L4yMYwCL72QhOHk6aV4Gg&s",
+    "providerName": "GreenScape Ltd."
+  },
+  {
+    "plantId": 6,
+    "plantName": "Rubber Plant",
+    "category": "Air Purifier",
+    "price": 25,
+    "rating": 4.6,
+    "availableStock": 9,
+    "careLevel": "Medium",
+    "description": "A bold indoor plant with glossy leaves that helps clean the air.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGk0uoDVux2G9OW0pWtl-VGCSKsml5MMS7lSTAQxmrgQ&s",
+    "providerName": "EcoPlant World"
+  },
+  {
+    "plantId": 7,
+    "plantName": "Boston Fern",
+    "category": "Decorative",
+    "price": 20,
+    "rating": 4.4,
+    "availableStock": 7,
+    "careLevel": "Hard",
+    "description": "A lush green fern that thrives in humid environments and adds freshness.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD6fKldiqzfHO_xsjEJvhJP59Uo9pVZVqfMg&s",
+    "providerName": "GreenLeaf Nursery"
+  },
+  {
+    "plantId": 8,
+    "plantName": "ZZ Plant",
+    "category": "Low Maintenance",
+    "price": 28,
+    "rating": 4.9,
+    "availableStock": 11,
+    "careLevel": "Easy",
+    "description": "An extremely low-maintenance plant that tolerates low light and neglect.",
+    "image": "https://www.realsimple.com/thmb/9yMs2mrJjeQ_UsNZajI85Z5VI9w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/zz-plant-GettyImages-1387302222-e9e228907c3e4e4ea3481898c90d1a53.jpg",
+    "providerName": "UrbanGreen Studio"
+  }
+]

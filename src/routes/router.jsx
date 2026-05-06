@@ -5,6 +5,7 @@ import Profile from "../pages/Profile/Profile";
 import Home from "../components/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PlantDetails from "../components/PlantDetails/PlantDetails";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,14 @@ const router = createBrowserRouter([
                 path: '/plants',
                 loader: () => fetch('./plants.json'),
                 element: <Plants></Plants>
+            },
+            {
+                path: '/plant-details/:id',
+                loader: async () => {
+                    const res = await fetch('/plants.json');
+                    return res.json();
+                },
+                element: <PlantDetails></PlantDetails>,
             },
             {
                 path: '/profile',

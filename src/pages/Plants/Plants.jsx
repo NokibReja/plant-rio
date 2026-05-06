@@ -6,6 +6,7 @@ import PlantCard from '../../components/PlantCard/PlantCard';
 
 const Plants = () => {
     const plantsData = useLoaderData()
+    // console.log(plantsData)
     return (
         <div className="">
             <h2 className="text-center font-bold text-5xl mt-10 text-green-500">Our All Plants</h2>

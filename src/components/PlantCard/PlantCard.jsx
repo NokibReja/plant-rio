@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const PlantCard = ({ plant }) => {
-    const { plantName, image, price, rating } = plant
+    const { plantId, plantName, image, price, rating } = plant
     // console.log(plant)
     return (
         <div className='mx-auto'>
@@ -17,7 +18,7 @@ const PlantCard = ({ plant }) => {
                     <p className='font-bold text-xl '>Price: {price}$</p>
                     <p className='text-orange-600 font-bold'>Rating : {rating}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn bg-green-600 text-white">View Details</button>
+                        <Link to={`/plant-details/${plantId}`} className="btn bg-green-600 text-white">View Details</Link>
                     </div>
                 </div>
             </div>

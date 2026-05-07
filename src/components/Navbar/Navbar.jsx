@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import './Navbar.css'
 import { GiBurningTree } from 'react-icons/gi';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
     const links = <>
@@ -9,6 +10,20 @@ const Navbar = () => {
         <NavLink to='/plants'>Plants</NavLink>
         <NavLink to='/profile'>My Profile</NavLink>
     </>
+
+    const { user, logOut } = use(AuthContext)
+    console.log(user)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                alert('Logged out successfully')
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+
     return (
         <div className='lg:w-11/12 mx-auto'>
             <div className="navbar bg-green-100 shadow-sm">
@@ -35,7 +50,14 @@ const Navbar = () => {
                     </nav>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/login' className='btn bg-green-600 text-white'>Login</Link>
+                    
+                    {
+                        user ?
+                            <button onClick={handleLogOut} className='btn bg-green-600 text-white'>logout</button>
+                            :
+                            <Link to='/login' className='btn bg-green-600 text-white'>Login</Link>
+                    }
+
                 </div>
             </div>
         </div>

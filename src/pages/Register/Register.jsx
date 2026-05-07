@@ -1,7 +1,71 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React, { use, useState } from 'react';
+import { Link, useNavigate } from 'react-router';
+import { AuthContext } from '../../provider/AuthProvider';
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
 
-const Login = () => {
+const Register = () => {
+    const [error, setError] = useState('')
+    const [show, setShow] = useState(false)
+
+    const { createUser, setUser, updateUser } = use(AuthContext)
+
+    const handlEye = () => {
+        setShow(!show)
+    }
+
+    const navigate = useNavigate()
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+        const form = e.target
+
+        const name = form.name.value
+        if (name.length < 5) {
+            return setError('Name should be more than 5 character')
+        }
+
+        const photo = form.photo.value
+        const email = form.email.value
+        const password = form.password.value
+
+        // console.log(name, photo, email, password)
+        setError('')
+
+        const casePattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
+
+
+        if (!casePattern.test(password)) {
+            setError('Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter, and one special character.')
+            return
+        }
+        setError('')
+        createUser(email, password)
+            .then(result => {
+                const user = result.user
+
+                navigate('/')
+                updateUser({ displayName: name, photoURL: photo })
+                    .than(() => {
+                        setUser({ ...user, displayName: name, photoURL: photo })
+                        // console.log('User update kora hoiyeche')
+                    })
+                    .catch(error => {
+                        // console.log(error)
+                        setUser(user)
+                        setError(error.message)
+                    })
+
+                // console.log('user create hoiche', result.user)
+            })
+            .catch(error => {
+                // console.log("dur error kahichi", error.code)
+                setError(error.message)
+            })
+
+
+    }
+
+
     return (
         <div className='w-11/12 mx-auto'>
             <div className="hero bg-base-200 min-h-screen">
@@ -9,23 +73,25 @@ const Login = () => {
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className="text-3xl font-bold text-center mt-2">Register now</h1>
                     <div className="card-body">
-                        <form onSubmit={() => { }}>
+                        <form onSubmit={handleRegister}>
                             <fieldset className="fieldset">
                                 {/* NAME field */}
                                 <label className="label">Name</label>
                                 <input
                                     name='name'
-                                    type="email"
+                                    type="text"
                                     className="input"
-                                    placeholder="Name" />
+                                    placeholder="Name"
+                                    required />
 
                                 {/* photo field */}
                                 <label className="label">PhotoURL</label>
                                 <input
-                                    name='Photo'
-                                    type="email"
+                                    name='photo'
+                                    type="text"
                                     className="input"
-                                    placeholder="PhotoURL" />
+                                    placeholder="PhotoURL"
+                                    required />
 
                                 {/* Email field */}
                                 <label className="label">Email</label>
@@ -33,25 +99,34 @@ const Login = () => {
                                     name='email'
                                     type="email"
                                     className="input"
-                                    placeholder="Email" />
+                                    placeholder="Email"
+                                    required />
 
                                 {/* password field */}
                                 <label className="label">Password</label>
-                                <input
-                                    name='password'
-                                    type="password"
-                                    className="input"
-                                    placeholder="Password" />
+                                <div className='flex relative'>
+                                    <input
+                                        name='password'
+                                        type={show ? "password" : 'text'}
+                                        className="input"
+                                        placeholder="Password"
+                                        required />
+                                    <span onClick={handlEye} className='absolute top-2 right-6 text-xl'>
+                                        {show ?
+                                            <FaRegEye  ></FaRegEye>
+                                            :
+                                            <FaRegEyeSlash className=''></FaRegEyeSlash>
+                                        }
 
+                                    </span>
+                                </div>
 
+                                {
+                                    error && <p className='text-red-500'>{error}</p>
+                                }
 
                                 <button type='submit' className="btn btn-neutral mt-4">Register</button>
-                                {/* Google */}
-                                <button className="btn bg-white text-black border-[#e5e5e5]">
-                                    <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
-                                    Login with Google
-                                </button>
-
+                                
                                 <p>Alredy have an account? Please <Link to='/login' className='text-blue-500 hover:underline'>Login</Link></p>
                             </fieldset>
                         </form>
@@ -62,4 +137,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

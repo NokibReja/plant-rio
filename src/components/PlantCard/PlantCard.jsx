@@ -6,7 +6,7 @@ const PlantCard = ({ plant }) => {
     // console.log(plant)
     return (
         <div className='mx-auto'>
-            <div className="card bg-base-100 w- shadow-sm hover:shadow-2xl transition duration-300 hover:scale-105">
+            <div className="card bg-base-100  shadow-sm hover:shadow-2xl transition duration-300 hover:scale-105">
                 <figure>
                     <img
                         className=' w-96 h-50 object-cover'

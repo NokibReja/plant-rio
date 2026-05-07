@@ -21,7 +21,7 @@ const PlantDetails = () => {
     // console.log(plantName)
 
     return (
-        <div className='w-11/12 mx-auto flex gap-10 bg-green-50 p-10'>
+        <div className='w-11/12 mx-auto flex gap-10 bg- p-10'>
             <section>
                 <div>
                     <img className='md:h-100 md:w-100 sm:h-60 sm:w-60 rounded-2xl' src={image} alt="" />

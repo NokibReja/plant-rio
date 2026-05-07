@@ -14,7 +14,7 @@ const Home = () => {
             <header>
                 <Header></Header>
             </header>
-            <div className='w-11/12 mx-auto py-10 px-30  bg-blue-50'>
+            <div className='w-11/12 mx-auto py-10 px-30  bg--50'>
                 <h2 className='text-center font-bold text-5xl my-10 text-orange-500'>Top Rated Indoor Plants</h2>
                 <div className="grid  md:grid-cols-4 sm:grid-cols-2 gap-10">
                     {

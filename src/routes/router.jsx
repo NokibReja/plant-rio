@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import PlantDetails from "../components/PlantDetails/PlantDetails";
 import PrivateRoute from "../provider/PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Loading from "../components/Loading/Loading";
 
 const router = createBrowserRouter([
     {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
                     const res = await fetch('/plants.json');
                     return res.json();
                 },
-                Component: Home
+                Component: Home,
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/plants',
@@ -28,7 +30,8 @@ const router = createBrowserRouter([
                     const res = await fetch('/plants.json');
                     return res.json();
                 },
-                element: <Plants></Plants>
+                element: <Plants></Plants>,
+                hydrateFallbackElement: <Loading></Loading>
             },
             {
                 path: '/plant-details/:id',
@@ -41,6 +44,7 @@ const router = createBrowserRouter([
                         <PlantDetails></PlantDetails>
                     </PrivateRoute>
                 ),
+                hydrateFallbackElement: <Loading></Loading>
             },
 
             {

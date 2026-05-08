@@ -2,7 +2,7 @@ import React from 'react';
 
 const GreenExperts = () => {
     return (
-        <section className='lg:w-11/12 mx-auto p-5 bg-gradient-to-r from-white to-green-50 rounded-3xl shadow-lg overflow-hidden my-10'>
+        <section className='lg:w-11/12 mx-auto p-5 bg-linear-to-r from-white to-green-50 rounded-3xl shadow-lg overflow-hidden my-10'>
             <h2 className='text-center text-3xl font-bold m-5'>Meet Our Green Experts</h2>
 
             <div className='lg:grid grid-cols-2 gap-5 w-3/4 mx-auto'>

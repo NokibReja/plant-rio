@@ -65,6 +65,7 @@ const Login = () => {
             })
             .catch((error) => {
                 // console.log(error.message);
+                setError(error.message);
             });
     };
 
@@ -76,12 +77,12 @@ const Login = () => {
 
         signInWithPopup(auth, googleProvider)
             .then((result) => {
-                console.log(result.user);
+                // console.log(result.user);
                 toast('Login successfully')
                 navigate(from, { replace: true });
             })
             .catch(error => {
-                console.log(error.message);
+                // console.log(error.message);
             });
     };
 

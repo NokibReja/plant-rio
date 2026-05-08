@@ -16,7 +16,7 @@ const PlantOfTheWeek = () => {
 
     return (
         <section className="w-11/12 mx-auto my-16">
-            <div className="bg-gradient-to-r from-green-50 to-white rounded-3xl shadow-lg overflow-hidden grid md:grid-cols-2 gap-8 p-6 md:p-10 items-center">
+            <div className="bg-linear-to-r from-green-50 to-white rounded-3xl shadow-lg overflow-hidden grid md:grid-cols-2 gap-8 p-6 md:p-10 items-center">
 
                 <div className="w-full">
                     <img

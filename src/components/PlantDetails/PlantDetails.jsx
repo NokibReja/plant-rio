@@ -42,7 +42,7 @@ const PlantDetails = () => {
         const name = form.name.value;
         const email = form.email.value;
 
-        console.log(name, email);
+        // console.log(name, email);
 
         toast.success(`Consultation Booked Successfully! Name:${name} Email:${email}`);
         form.reset();
@@ -53,7 +53,7 @@ const PlantDetails = () => {
             <div className='grid md:grid-cols-2 gap-10 items-center bg-green-50 p-8 rounded-2xl shadow-lg'>
                 <section>
                     <img
-                        className='w-full md:h-[500px] object-cover rounded-2xl'
+                        className='w-full md:h-125 object-cover rounded-2xl'
                         src={image}
                         alt={plantName}
                     />

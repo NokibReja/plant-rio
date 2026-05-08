@@ -107,15 +107,15 @@ const Register = () => {
                                 <div className='flex relative'>
                                     <input
                                         name='password'
-                                        type={show ? "password" : 'text'}
+                                        type={show ? 'text' : "password"}
                                         className="input"
                                         placeholder="Password"
                                         required />
                                     <span onClick={handlEye} className='absolute top-2 right-6 text-xl'>
                                         {show ?
-                                            <FaRegEye  ></FaRegEye>
-                                            :
                                             <FaRegEyeSlash className=''></FaRegEyeSlash>
+                                            :
+                                            <FaRegEye  ></FaRegEye>
                                         }
 
                                     </span>
@@ -126,7 +126,7 @@ const Register = () => {
                                 }
 
                                 <button type='submit' className="btn btn-neutral mt-4">Register</button>
-                                
+
                                 <p>Alredy have an account? Please <Link to='/login' className='text-blue-500 hover:underline'>Login</Link></p>
                             </fieldset>
                         </form>

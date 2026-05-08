@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PlantDetails from "../components/PlantDetails/PlantDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
@@ -15,12 +16,18 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                loader: () => fetch('./plants.json'),
+                loader: async () => {
+                    const res = await fetch('/plants.json');
+                    return res.json();
+                },
                 Component: Home
             },
             {
                 path: '/plants',
-                loader: () => fetch('./plants.json'),
+                loader: async () => {
+                    const res = await fetch('/plants.json');
+                    return res.json();
+                },
                 element: <Plants></Plants>
             },
             {
@@ -29,8 +36,13 @@ const router = createBrowserRouter([
                     const res = await fetch('/plants.json');
                     return res.json();
                 },
-                element: <PlantDetails></PlantDetails>,
+                element: (
+                    <PrivateRoute>
+                        <PlantDetails></PlantDetails>
+                    </PrivateRoute>
+                ),
             },
+
             {
                 path: '/login',
                 element: <Login></Login>
@@ -43,15 +55,16 @@ const router = createBrowserRouter([
     },
     {
         path: '/profile',
-        element: <PrivateRoute>
-            <Profile></Profile>
-        </PrivateRoute>,
+        element: (
+            <PrivateRoute>
+                <Profile></Profile>
+            </PrivateRoute>
+        ),
     },
-
     {
         path: '/*',
-        element: <p>eror</p>
+        element: <ErrorPage></ErrorPage>
     }
 ])
 
-export default router
+export default router;

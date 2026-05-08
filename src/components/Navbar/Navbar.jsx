@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router';
 import './Navbar.css'
 import { GiBurningTree } from 'react-icons/gi';
 import { AuthContext } from '../../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const links = <>
@@ -12,15 +13,15 @@ const Navbar = () => {
     </>
 
     const { user, logOut } = use(AuthContext)
-    console.log(user)
+    // console.log(user)
 
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                alert('Logged out successfully')
+                toast('Logged out successfully')
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
             })
     }
 

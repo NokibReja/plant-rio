@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../../provider/AuthProvider';
 import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const Register = () => {
     const [error, setError] = useState('')
@@ -43,6 +44,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user
 
+                toast('Registation successfully')
+                
                 navigate('/')
                 updateUser({ displayName: name, photoURL: photo })
                     .than(() => {
@@ -61,10 +64,7 @@ const Register = () => {
                 // console.log("dur error kahichi", error.code)
                 setError(error.message)
             })
-
-
     }
-
 
     return (
         <div className='w-11/12 mx-auto'>
